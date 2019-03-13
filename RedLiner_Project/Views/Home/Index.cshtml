@@ -1,0 +1,179 @@
+﻿
+<div class="calcite">
+
+    <link rel="stylesheet" href="https://js.arcgis.com/3.27/esri/themes/calcite/dijit/calcite.css">
+    <link rel="stylesheet" href="https://js.arcgis.com/3.27/esri/themes/calcite/esri/esri.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <div class="header" style="width:100%;background-color:burlywood;padding-top:10px;padding-bottom:10px;text-align:center;color:firebrick;">
+        <img src="data:image/png;base64,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" style="float:left" />
+        <canvas id="myCanvas" width="200" height="70" style="color:firebrick;"></canvas>
+        <script>
+            var c = document.getElementById("myCanvas");
+            var ctx = c.getContext("2d");
+
+            ctx.font = "30px Verdana";
+
+
+            var gradient = ctx.createLinearGradient(0, 0, c.width, 0);
+            gradient.addColorStop("0", "magenta");
+            gradient.addColorStop("0.5", "blue");
+            gradient.addColorStop("1.0", "red");
+
+
+            ctx.strokeStyle = gradient;
+            ctx.strokeText("REDLINER", 10, 50);
+        </script>
+    </div>
+    <div class="main">
+        <div class="content" style="width:82%;float: left;border:solid;height:550px;border-width:2px;">
+            <div data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="design:'headline', gutters:false" style="width: 100%; height: 100%; margin:0;">
+                <div id="map" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'center'" style="padding:0">
+                </div>
+                <div id="search"></div>
+                <div id="LocateButton"></div>
+
+
+            </div>
+        </div>
+
+        <div class="right" style="width:18%; border:solid;border-color:white; float: right; ">
+            <div class="tab">
+                <button class="tablinks" onclick="show(event, 'Activity')" style="width:125px;">Activity</button>
+
+                <button class="tablinks" onclick="show(event, 'RedLiner')" style="width:112px;">RedLiner</button>
+
+            </div>
+            <div id="Activity" class="tabcontent" style="color:gray;">
+
+                <div data-dojo-type="dijit/TitlePane" data-dojo-props="title:'Shapes',open:false " style="color:black;background-color:gray;">
+                    <div data-dojo-props="dijit/layout/ContentPane" style="width:250px; height:129px;overflow:auto;">
+                        <div>
+                            &nbsp;&nbsp; <button data-dojo-type="dijit/form/Button">Point</button>
+                            &nbsp;&nbsp; <button data-dojo-type="dijit/form/Button">Multi Point</button>
+                            &nbsp;&nbsp; <button data-dojo-type="dijit/form/Button">Line</button>
+                        </div>
+                        <br />
+                        <div>
+                            &nbsp;&nbsp;<button data-dojo-type="dijit/form/Button">Polyline</button>
+                            &nbsp;&nbsp; <button data-dojo-type="dijit/form/Button">Polygon</button>
+
+                        </div>
+                        <br />
+                        <div>
+                            &nbsp;&nbsp; <button data-dojo-type="dijit/form/Button">Freehand Polyline</button>
+                            &nbsp;&nbsp; <button data-dojo-type="dijit/form/Button">Triangle</button>
+                        </div>
+                        <br />
+                        <div>
+                            &nbsp;&nbsp; <button data-dojo-type="dijit/form/Button">Freehand Polygon</button>
+                            &nbsp;&nbsp; <button data-dojo-type="dijit/form/Button">Circle</button>
+                        </div>
+                        <br />
+                        &nbsp;&nbsp; <button data-dojo-type="dijit/form/Button">Ellipse</button>
+                        &nbsp;&nbsp; <button data-dojo-type="dijit/form/Button">Arrow</button>
+
+                    </div>
+                </div>
+                <div id="titlePane" data-dojo-type="dijit/TitlePane" data-dojo-props="title:'Measurement', open:false" style="color:black;background-color:gray;">
+                    <div data-dojo-props="dijit/layout/ContentPane" style="width:231px; height:213px;overflow:auto;">
+                        <div id="measurement"></div>
+                    </div>
+
+                </div>
+                <div data-dojo-type="dijit/TitlePane"
+                     data-dojo-props="title:'BaseMapGallery', open:false" style="color:black;background-color:white;">
+                    <div data-dojo-type="dijit/layout/ContentPane" style="width:250px; height:103px; overflow:auto;">
+                        <div id="basemapGallery"></div>
+                    </div>
+                </div>
+                <div data-dojo-type="dijit/TitlePane"
+                     data-dojo-props="title:'PrintMap', open:false" style="color:black;background-color:gray;">
+                    <div data-dojo-type="dijit/layout/ContentPane" style="width:250px; height:30px; overflow:auto;">
+                        <div id="printer"></div>
+                    </div>
+                </div>
+
+            </div>
+            <div id="RedLiner" class="tabcontent" style=" height:487px;">
+
+
+                <div class="container">
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" onclick="clearTextBox();"><center>Add Project</center></button><br /><br />
+                
+                    <table class="table table-bordered table-hover">
+                        <thead style="color:blue">
+                            <tr>
+                               
+                                <th>
+                                    <b >ID</b>
+                                </th>
+                                <th>
+                                    <b >Name</b>
+                                </th>
+                                <th>
+                                    <b>Actions</b>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody class="tbody"></tbody>
+                    </table>
+                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    @*<button type="button" class="close" data-dissmiss="modal"><span aria-hidden="true">×</span></button>*@
+                                    <button type="button" class="close" data-dismiss="modal">×</button>
+                                    <h4 class="modal-title" id="myModalLabel">Add Project</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <form>
+
+                                        <div class="form-group">
+                                            <label for="ProjectId">ID</label>
+                                            <input type="text" class="form-control" id="ProjectID" placeholder="Id" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="Name">Name</label>
+                                            <input type="text" class="form-control" id="Name" placeholder="Name" />
+                                        </div>
+                                    </form>
+                                    <div class="modal-footer">
+                                        
+                                        <button type="button" class="btn btn-primary" id="btnAdd" onclick="return Add();">Add</button>
+                                        <button type="button" class="btn btn-primary" id="btnUpdate" style="display:none;" onclick="Update();">Update</button>
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <script>
+                            function show(evt, Activity) {
+                                var i, tabcontent, tablinks;
+                                tabcontent = document.getElementsByClassName("tabcontent");
+                                for (i = 0; i < tabcontent.length; i++) {
+                                    tabcontent[i].style.display = "none";
+                                }
+                                tablinks = document.getElementsByClassName("tablinks");
+                                for (i = 0; i < tablinks.length; i++) {
+                                    tablinks[i].className = tablinks[i].className.replace("active", "");
+                                }
+                                document.getElementById(Activity).style.display = "block";
+                                evt.currentTarget.className += "active";
+                            }
+                        </script>
+
+                    </div>
+
+                </div>
+                <div class="footer" style=" position: absolute; right: 0;bottom:-12px;left: 0;background-color:burlywood;color:firebrick;">
+                    <p style="float:left;">Email-Id:Kiruthikageogri@gmail.com</p><p style="float:right;">GISbiz technologies pvt ltd</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>        
+           

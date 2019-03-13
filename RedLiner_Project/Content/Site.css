@@ -1,0 +1,134 @@
+﻿html, body, #map {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-y: hidden;
+}
+
+#map_root {
+    height: 544px !important;
+}
+
+#search {
+    display: block;
+    position: absolute;
+    z-index: 2;
+    top: 23px;
+    left: 62px;
+    opacity: 1;
+}
+
+#measurement {
+    color: black;
+    background-color: gray;
+}
+
+.dijitTitlePaneContentInner {
+    padding-left: 0px !important;
+}
+
+.esriBasemapGalleryLabelContainer {
+    padding: 0px !important;
+}
+
+.dijitContentPane esriMeasurementButtonContainer {
+    width: 199px !important;
+}
+
+.ovwContainer {
+    width: 246px !important;
+    height: 151px !important;
+    top: 5px !important;
+    right: 6px !important;
+}
+
+#LocateButton {
+    position: absolute;
+    top: 86px;
+    left: 15px;
+    z-index: 50;
+}
+
+.esriPrint {
+    width: 0px !important;
+    font-size: 15px !important;
+    padding-left: 90px !important;
+}
+
+.ovwHighlight {
+    border-color: crimson !important;
+}
+
+.dijit dijitReset dijitInline dijitButton {
+    margin: 5px !important;
+}
+
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: burlywood;
+    border-bottom-color: black;
+}
+
+    .tab button {
+        background-color: inherit;
+        float: left;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 14px 16px;
+        transition: 0.3s;
+        font-size: 17px;
+    }
+
+        .tab button:hover {
+            background-color: gray;
+        }
+
+
+        .tab button.active {
+            background-color:gray;
+        }
+
+.tabcontent {
+    display: none;
+    padding: 6px 1px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+
+.ovwContainer {
+    border: solid !important;
+    border-color: black !important;
+}
+
+hr {
+    border-top: 1px solid black;
+    margin-top: 3px !important;
+    margin-bottom: 15px !important;
+}
+
+.esriMeasurementSeparator {
+    height: 0px !important;
+}
+
+.dijitContentPane esriMeasurementButtonContainer {
+    width: 231px !important;
+}
+
+.esriMeasurement {
+    width: 210px !important;
+}
+.table{
+    width:100% !important;
+}
+
+.container {
+    padding: 3px !important;
+    width: 236px;
+    height: 471px;
+    overflow-y:scroll;
+    overflow-x:hidden;
+}
+
