@@ -115,8 +115,8 @@ require([
         map: map
     }, "LocateButton");
     myLocation.startup();
-    function Save(map)
-    {
-        map: map;
-    }
+    function Trial(map) {
+       map:map
+     }
+
 });

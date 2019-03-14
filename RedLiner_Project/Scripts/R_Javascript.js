@@ -12,11 +12,16 @@ function loadData() {
             var html = '';
             $.each(result, function (key, item) {
                 html += '<tr>';
-                html += '<td>' + item.ProjectID + '</td>';
+                html += '<td><input type="CheckBox" class="mycheck" id="mycheck">'+'</td>';
                 html += '<td>' + item.Name + '</td>';
                 html += '<td><a href="#" onclick="return getbyID(' + item.ProjectID + ')">Edit</a> | <a href="#" onclick="Delele(' + item.ProjectID + ')">Delete</a></td>';
-                html += '</tr>';
+                html += '<td style="visibility:hidden;">' + item.ProjectID + '</td>';
+                html += '</tr>'; 
+                $('.mycheck').on('change', function () {
+                    $('.mycheck').not(this).prop('checked', false);
+                });
             });
+           
             $('.tbody').html(html);
         },
         error: function (errormessage) {

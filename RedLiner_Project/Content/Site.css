@@ -42,6 +42,12 @@
     top: 5px !important;
     right: 6px !important;
 }
+hr {
+    margin-top: -14px;
+    margin-bottom: -19px;
+    border: 0;
+    border-top: 1px solid #151212;
+}
 
 #LocateButton {
     position: absolute;
@@ -53,7 +59,8 @@
 .esriPrint {
     width: 0px !important;
     font-size: 15px !important;
-    padding-left: 90px !important;
+    padding-left: 88px !important;
+    padding-right:125px !important;
 }
 
 .ovwHighlight {
@@ -103,11 +110,6 @@
     border-color: black !important;
 }
 
-hr {
-    border-top: 1px solid black;
-    margin-top: 3px !important;
-    margin-bottom: 15px !important;
-}
 
 .esriMeasurementSeparator {
     height: 0px !important;
@@ -116,6 +118,7 @@ hr {
 .dijitContentPane esriMeasurementButtonContainer {
     width: 231px !important;
 }
+
 
 .esriMeasurement {
     width: 210px !important;
@@ -128,7 +131,21 @@ hr {
     padding: 3px !important;
     width: 236px;
     height: 471px;
-    overflow-y:scroll;
-    overflow-x:hidden;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background-color: #948e8e;
 }
-
+td {
+    border-bottom-color: black !important;
+    border-bottom-width: 1px !important;
+    border-bottom-style: solid !important;
+    padding-top: 8px !important;
+    padding-bottom: 9px !important;
+    padding-left: 11px !important;
+    color:white;
+}
+a
+{
+    
+    color:white;
+}
