@@ -1,6 +1,8 @@
-﻿$(document).ready(function () {
+﻿
+$(document).ready(function () {
     loadData();
 });
+
 //Load Data function
 function loadData() {
     $.ajax({
@@ -12,7 +14,7 @@ function loadData() {
             var html = '';
             $.each(result, function (key, item) {
                 html += '<tr>';
-                html += '<td><input type="CheckBox" class="mycheck" id="mycheck">'+'</td>';
+                html += '<td><input type="CheckBox" class="mycheck" id="mycheck" style="cursor:pointer"/>'+'</td>';
                 html += '<td>' + item.Name + '</td>';
                 html += '<td><a href="#" onclick="return getbyID(' + item.ProjectID + ')">Edit</a> | <a href="#" onclick="Delele(' + item.ProjectID + ')">Delete</a></td>';
                 html += '<td style="visibility:hidden;">' + item.ProjectID + '</td>';
@@ -55,6 +57,7 @@ function Add() {
         }
     });
 }
+
 //Function for getting the Data Based upon Project ID
 function getbyID(EmpID) {
     $('#Name').css('border-color', 'lightgrey');

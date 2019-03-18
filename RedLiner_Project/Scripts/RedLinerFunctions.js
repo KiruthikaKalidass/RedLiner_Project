@@ -16,6 +16,7 @@ require([
     "esri/arcgis/utils",
     "esri/dijit/OverviewMap",
     "esri/dijit/Print",
+    "esri/SpatialReference",
     "esri/dijit/LocateButton",
     "dijit/layout/BorderContainer",
     "dijit/layout/ContentPane",
@@ -26,17 +27,17 @@ require([
     "dijit/form/Button",
     "dijit/WidgetSet",
     "dojo/domReady!"
-], function (Map, Search, Scalebar, Draw, Graphic, GraphicsLayer, SimpleMarkerSymbol, SimpleLineSymbol, SimpleFillSymbol, parser, registry, Measurement, BasemapGallery, arcgisUtils, OverviewMap, Print, LocateButton, OpenStreetMapLayer, navigation, on) {
+], function (Map, Search, Scalebar, Draw, Graphic, GraphicsLayer, SimpleMarkerSymbol, SimpleLineSymbol, SimpleFillSymbol, parser, registry, Measurement, BasemapGallery, arcgisUtils, OverviewMap, Print,SpatialReference, LocateButton, OpenStreetMapLayer, navigation, on) {
     parser.parse();
 
     var map = new Map("map", {
         basemap: "topo",
-        center: [78, 10],
+        center: [77.96, 10.35],
         zoom: 13,
         smartNavigation: true
     });
-
-    var graphicslayer = new GraphicsLayer();
+   
+   
     var overviewMap = new OverviewMap({
         map: map,
         visible: true
@@ -107,6 +108,11 @@ require([
         var graphic = new Graphic(evt.geometry, symbol);
         map.graphics.add(graphic);
     }
+    function Send()
+    {
+        map.graphics();
+    }
+   
    
 
     var measurement = new Measurement({ map: map }, "measurement");
@@ -115,8 +121,7 @@ require([
         map: map
     }, "LocateButton");
     myLocation.startup();
-    function Trial(map) {
-       map:map
-     }
 
+ 
 });
+

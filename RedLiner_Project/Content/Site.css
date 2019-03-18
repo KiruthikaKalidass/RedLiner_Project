@@ -74,7 +74,7 @@ hr {
 .tab {
     overflow: hidden;
     border: 1px solid #ccc;
-    background-color: burlywood;
+    background-color: transparent;
     border-bottom-color: black;
 }
 
@@ -90,7 +90,7 @@ hr {
     }
 
         .tab button:hover {
-            background-color: gray;
+            background-color:gainsboro;
         }
 
 
@@ -146,6 +146,5 @@ td {
 }
 a
 {
-    
     color:white;
 }
