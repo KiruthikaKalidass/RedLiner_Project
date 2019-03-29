@@ -130,10 +130,10 @@ hr {
 .container {
     padding: 3px !important;
     width: 236px;
-    height: 471px;
+    height: 300px;
     overflow-y: scroll;
     overflow-x: hidden;
-    background-color: #948e8e;
+    /*background-color: #948e8e;*/
 }
 td {
     border-bottom-color: black !important;
@@ -142,9 +142,9 @@ td {
     padding-top: 8px !important;
     padding-bottom: 9px !important;
     padding-left: 11px !important;
-    color:white;
+    color:black;
 }
 a
 {
-    color:white;
+    color:black;
 }

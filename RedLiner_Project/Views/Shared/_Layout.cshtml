@@ -6,18 +6,21 @@
     <title>RedLiner</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-
+  
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://js.arcgis.com/3.27/"></script>
     <script src="~/Scripts/R_Javascript.js"></script>
     <script src="~/Scripts/RedLinerFunctions.js"></script>
-    <script src="~/Scripts/CheckBox.js"></script>
-    
+    <script type="text/javascript">
+        alertOne();
+    </script>
+
 </head>
 <body>
     @RenderBody()
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+ 
 </body>
 </html>

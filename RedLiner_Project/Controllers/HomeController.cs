@@ -28,6 +28,11 @@ namespace RedLiner_Project.Controllers
             var Employee = empDB.ListAll().Find(x => x.ProjectID.Equals(ID));
             return Json(Employee, JsonRequestBehavior.AllowGet);
         }
+        public JsonResult UpdatebyID(int ID)
+        {
+            var Employee = empDB.ListAll().Find(x => x.ProjectID.Equals(ID));
+            return Json(Employee, JsonRequestBehavior.AllowGet);
+        }
         public JsonResult Update(R_Model emp)
         {
             return Json(empDB.Update(emp), JsonRequestBehavior.AllowGet);

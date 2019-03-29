@@ -1,10 +1,26 @@
 ﻿
 $(document).ready(function () {
     loadData();
-});
 
+    $(document).on('click', 'input[type="checkbox"]', '.mycheck', function (id) {
+        $('input[type="checkbox"]').not(this).prop('checked', false);
+        if ($(this).is(':checked', true)) {
+            getbyID(this.id);
+
+        }
+        else ($(this).is(':checked', false))
+        {
+            RemoveGraphics();
+        }
+    });
+   
+});
+var graphicString = "";
 //Load Data function
 function loadData() {
+    $(document).on('click', 'input[type="checkbox"]', function () {
+        $('input[type="checkbox"]').not(this).prop('checked', false);
+    });
     $.ajax({
         url: "/Home/List",
         type: "GET",
@@ -14,14 +30,11 @@ function loadData() {
             var html = '';
             $.each(result, function (key, item) {
                 html += '<tr>';
-                html += '<td><input type="CheckBox" class="mycheck" id="mycheck" style="cursor:pointer"/>'+'</td>';
+                html += '<td><input type="checkbox" class="mycheck" id="' + item.ProjectID + '" style="cursor:pointer"/>'  +'</td>';
                 html += '<td>' + item.Name + '</td>';
-                html += '<td><a href="#" onclick="return getbyID(' + item.ProjectID + ')">Edit</a> | <a href="#" onclick="Delele(' + item.ProjectID + ')">Delete</a></td>';
+                html += '<td><a href="#" class="glyphicon glyphicon-pencil" title="Edit" onclick="return UpdatebyID(' + item.ProjectID + ')"><i class="icon-pencil icon-white"></i></a> | <a href="#" class="glyphicon glyphicon-trash"  title="Delete" onclick="Delete(' + item.ProjectID + ')"><i class="icon-pencil icon-white"></i><a></td>';
                 html += '<td style="visibility:hidden;">' + item.ProjectID + '</td>';
                 html += '</tr>'; 
-                $('.mycheck').on('change', function () {
-                    $('.mycheck').not(this).prop('checked', false);
-                });
             });
            
             $('.tbody').html(html);
@@ -29,22 +42,26 @@ function loadData() {
         error: function (errormessage) {
             alert(errormessage.responseText);
         } 
+       
+
     });
 }
 
 //Add Data Function
-function Add() {
+function Add(JSONString) {
+   
     var res = validate();
     if (res == false) {
         return false;
     }
-    var empObj = {
+    var Obj = {
         ProjectID: $('#ProjectID').val(),
-        Name: $('#Name').val()
+        Name: $('#Name').val(),
+        JSONString: JSONString
     };
     $.ajax({
         url: "/Home/Add",
-        data: JSON.stringify(empObj),
+        data: JSON.stringify(Obj),
         type: "POST",
         contentType: "application/json;charset=utf-8",
         dataType: "json",
@@ -59,17 +76,41 @@ function Add() {
 }
 
 //Function for getting the Data Based upon Project ID
-function getbyID(EmpID) {
+function getbyID(ProjectID) {
     $('#Name').css('border-color', 'lightgrey');
 
     $.ajax({
-        url: "/Home/getbyID/" + EmpID,
+        url: "/Home/getbyID/" + ProjectID,
         typr: "GET",
         contentType: "application/json;charset=UTF-8",
         dataType: "json",
         success: function (result) {
             $('#ProjectID').val(result.ProjectID);
             $('#Name').val(result.Name);
+            graphicString = result.JSONString;
+        
+            var drawG = new drawGraphics();
+            drawG.drawGraphic(JSON.parse(graphicString));
+           
+        },
+        error: function (errormessage) {
+            alert(errormessage.responseText);
+        }
+    });
+    return false;
+}
+function UpdatebyID(ProjectID) {
+    $('#Name').css('border-color', 'lightgrey');
+
+    $.ajax({
+        url: "/Home/getbyID/" + ProjectID,
+        typr: "GET",
+        contentType: "application/json;charset=UTF-8",
+        dataType: "json",
+        success: function (result) {
+            $('#ProjectID').val(result.ProjectID);
+            $('#Name').val(result.Name);
+            $('JSONString').val(result.JSONString);
             $('#myModal').modal('show');
             $('#btnUpdate').show();
             $('#btnAdd').hide();
@@ -81,18 +122,20 @@ function getbyID(EmpID) {
     return false;
 }
 //function for updating project's record
-function Update() {
+function Update(JSONString) {
     var res = validate();
     if (res == false) {
         return false;
     }
-    var empObj = {
+    var Obj = {
         ProjectID: $('#ProjectID').val(),
-        Name: $('#Name').val()
+        Name: $('#Name').val(),
+        JSONString: JSONString
+     
     };
     $.ajax({
         url: "/Home/Update",
-        data: JSON.stringify(empObj),
+        data: JSON.stringify(Obj),
         type: "POST",
         contentType: "application/json;charset=utf-8",
         dataType: "json",
@@ -109,8 +152,8 @@ function Update() {
     });
 }
 //function for deleting Project's record
-function Delele(ID) {
-    var ans = confirm("Are you sure you want to delete this Record?");
+function Delete(ID) {
+    var ans = confirm("Are you sure you want to delete this Project?");
     if (ans) {
         $.ajax({
             url: "/Home/Delete/" + ID,
@@ -144,26 +187,7 @@ function validate() {
     else {
         $('#Name').css('border-color', 'lightgrey');
     }
-    //if ($('#Age').val().trim() == "") {
-    //    $('#Age').css('border-color', 'Red');
-    //    isValid = false;
-    //}
-    //else {
-    //    $('#Age').css('border-color', 'lightgrey');
-    //}
-    //if ($('#State').val().trim() == "") {
-    //    $('#State').css('border-color', 'Red');
-    //    isValid = false;
-    //}
-    //else {
-    //    $('#State').css('border-color', 'lightgrey');
-    //}
-    //if ($('#Country').val().trim() == "") {
-    //    $('#Country').css('border-color', 'Red');
-    //    isValid = false;
-    //}
-    //else {
-    //    $('#Country').css('border-color', 'lightgrey');
-    //}
+
     return isValid;
 }
+

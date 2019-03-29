@@ -25,7 +25,8 @@ namespace RedLiner_Project.Models
                     lst.Add(new R_Model
                     {
                         ProjectID = Convert.ToInt32(rdr["ProjectId"]),
-                        Name = rdr["Name"].ToString()
+                        Name = rdr["Name"].ToString(),
+                        JSONString=rdr["JSONString"].ToString()
 
                     });
                 }
@@ -42,7 +43,7 @@ namespace RedLiner_Project.Models
                 com.CommandType = CommandType.StoredProcedure;
                 com.Parameters.AddWithValue("@Id", emp.ProjectID);
                 com.Parameters.AddWithValue("@Name", emp.Name);
-
+                com.Parameters.AddWithValue("@JSONString", emp.JSONString);
                 com.Parameters.AddWithValue("@Action", "Insert");
                 i = com.ExecuteNonQuery();
             }
@@ -58,6 +59,7 @@ namespace RedLiner_Project.Models
                 com.CommandType = CommandType.StoredProcedure;
                 com.Parameters.AddWithValue("@Id", emp.ProjectID);
                 com.Parameters.AddWithValue("@Name", emp.Name);
+                com.Parameters.AddWithValue("@JSONString", emp.JSONString);
                 com.Parameters.AddWithValue("@Action", "Update");
                 i = com.ExecuteNonQuery();
             }
